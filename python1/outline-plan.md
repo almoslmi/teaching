@@ -10,7 +10,7 @@ Initially, I want to minimize the things the students learn.  I want them to bli
 
 I have to come up with some cool programs that I can show them in order to show the power of Python.
 
- - Web Scraping
+ - [X] ~~Web Scraping~~
  - Flask instant website
  - Game of Life?
  - Crazy Turtle Spirograph
@@ -19,6 +19,7 @@ I have to come up with some cool programs that I can show them in order to show 
  - Simple game a la pygame?
  - Really fast REPL calculations
  - Plot graph of physics problem?  Maybe whale code
+ - [X] ~~Jupyter data analysis~~
 
 ### 1.2: Let Them Try (1 day)
 
