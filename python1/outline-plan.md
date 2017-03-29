@@ -11,7 +11,7 @@ Initially, I want to minimize the things the students learn.  I want them to bli
 I have to come up with some cool programs that I can show them in order to show the power of Python.
 
  - [X] ~~Web Scraping~~
- - Flask instant website
+ - [X] ~~Flask instant website~~
  - Game of Life?
  - Crazy Turtle Spirograph
  - Book word data processor
