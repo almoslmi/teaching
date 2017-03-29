@@ -13,7 +13,7 @@ I have to come up with some cool programs that I can show them in order to show 
  - [X] ~~Web Scraping~~
  - [X] ~~Flask instant website~~
  - Game of Life?
- - Crazy Turtle Spirograph
+ - [X] ~~Crazy Turtle Spirograph~~
  - Book word data processor
  - Big Prime math problem?
  - Simple game a la pygame?
