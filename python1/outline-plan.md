@@ -35,21 +35,24 @@ Touchy feely.  I want to bring things back to earth and share the schedule/plan/
 ## 2: First Steps
 
 In this section, I want to start introducing them to things.  This might be a good time for the [the first exploration](first-exploration.md).  My goal for this section is to get them comfortable with writing, looking at, and running code.  They should not be afraid of error messages and should start being able to debug simple things.  It will start with copying code (maybe with some customizations?).  Then we'll move to simple programs, comments, and what good code style basics are like.  This might be a good time to introduce to PEP8!
-**TODO: Create automatic tester-izer**
 
-### 2.1: Our First Program (2-3 days)
+### 2.1: Our First Program (1-2 days)
 
 We'll work on writing a few simple programs.  We'll introduce variables, math, and numbers/strings.
 
  - Tip Calculator
  - Greeterbot
  - Repeaterbot
- - Equation processor
-**TODO: All of the above example files**
+ - Turtle Basics
+**TODO: These are some very simple examples.  May need more complicated ones**
 
 ### 2.2: Let Them Do It (2-4 days)
 
 In this one, I'll give them a set of requirements and have them create their own program, testing it and running it, etc.  They can submit it to me 3 times or something like that, maybe?  I'll have either multiple times or several choices of projects.  This might be a good time to introduce code review maybe.  I'd have to come up with some guidelines or ways of keeping them from being 💩 faces.
+
+ - [x] ~~Turtle program to write their name~~
+ - [x] ~~Turtle program to simulate achilles problem~~
+ - User input fractals via turtle?
 **TODO: Come up with projects, solution examples**
 **TODO: Code review guidelines**
 
