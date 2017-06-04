@@ -40,10 +40,10 @@ In this section, I want to start introducing them to things.  This might be a go
 
 We'll work on writing a few simple programs.  We'll introduce variables, math, and numbers/strings.
 
- - Tip Calculator
- - Greeterbot
- - Repeaterbot
- - Turtle Basics
+ - [x] Tip Calculator
+ - [x] Greeterbot
+ - [x] Repeaterbot
+ - [x] Turtle Basics
 **TODO: These are some very simple examples.  May need more complicated ones**
 
 ### 2.2: Let Them Do It (2-4 days)
