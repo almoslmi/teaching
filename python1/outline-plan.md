@@ -104,7 +104,6 @@ I want to give them a good idea of what the filesystem looks like so they can ho
 #### 3.2.2: Moving Around
 
 `pwd, cd, ls, pushd, popd` to find their way around.  This would be a good time for a folder maze.
-**TODO: Make simple folder maze**
 
 #### 3.2.3: Working with Files
 
@@ -116,7 +115,11 @@ I want to give them a good idea of what the filesystem looks like so they can ho
 `ssh, grep, find, pipes, and arrows`  The final folder maze.  I want to make sure the students don't feel overwhelmed at this point.
 **TODO: Make final folder maze**
 
-#### 3.2.5: Running Python Things
+#### 3.2.5: Modules
+
+In this section I'll introduce importing, the standard library, and some other notable packages, along with pip.
+
+#### 3.2.6: Running Python Things
 
 Now we can introduce programming things in the terminal.  The REPL, testing, and git!  This section should have two or more projects including the full programming workflow.  Introduce CodeWars? as well.
 
