@@ -394,7 +394,7 @@ You can even use the variable in both sides of the equation!
 ```javascript
 x = 12;
 x = x + 3;
-// The left side evaluates to 15, so then
+// The right side evaluates to 15, so then
 // x gets set to 15: x === 15
 ```
 
