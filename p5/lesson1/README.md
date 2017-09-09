@@ -4,11 +4,17 @@ The first lesson will cover setting up a project, a quick flyby of HTML and JS a
 
 ## Step 1: The Setup
 
-There's a few things we'll need to get started: a browser (probably check) and a text editor (we'll use [Sublime Text](https://www.sublimetext.com/) just to get started).
+There's a few things we'll need to get started: a browser (I like Chrome, myself) and a text editor (we'll use [Sublime Text](https://www.sublimetext.com/) just to get started).
 
 ![Sublime Text screenshot](images/sublime.png)
 
-Go ahead and get those installed.  I won't insult you by telling you how to install a program.
+Go ahead and get those installed.
+
+One more neat thing before we start.  In Chrome, you can use this thing called a **console** to test out any of the code that we go over before adding it into a project.  There's a lot of ways to open the console, but the fastest is `command + option + j` on Mac and `control + shift + j` on Windows/Linux.  You can also get it by right-clicking and selecting `inspect`, or by opening the developer tools from the Chrome dropdown menu.
+
+![console](images/console.png)
+
+This should come in handy if you get stuck.
 
 ## Step 2: HTML/JS Flyby
 
@@ -35,7 +41,7 @@ There are a few tags that make up the foundation of every page.  Every page shou
 <html>
   <head>
     <title>Title in Page Tab</title>
-    <!-- This is how we comment.  Nobody sees this -->
+    <!-- This is how we comment in HTML.  Nobody sees this but us -->
   </head>
   <body>
     Hi there!
@@ -46,23 +52,25 @@ There are a few tags that make up the foundation of every page.  Every page shou
 1. `<!doctype html>`: This tells the browser it's looking at an HTML file, and what version of HTML we're using, based on the format.  This simplified format means we're using the most recent version: HTML5.
 2. `<html>`: These tags contain all the rest of our html.  Nowadays, you can even leave these off and the browser is smart enough to figure out what you mean, but it's best to make sure you have this anyways.
 3. `<head>`: This section doesn't show up on the page.  It is a header that contains many of the settings and information that the browser, search engines, devices, and other internet things need to interact with your web page.  Once we get there, we'll put our links to **stylesheets** there, to make our pages look pretty.
-4. `<body>`: This is where the meat of your page goes.  Everything in the body will exist on your webpage.  Our if you were to save the above snippet as `basic.html` and double-click it to open it, you would see this:
+4. `<body>`: This is where the meat of your page goes.  Everything in the body will exist on your webpage.  If you were to save the above snippet as `basic.html` and double-click it to open it, you would see this:
 
 ![Basic HTML rendered](images/basic-html.png)
 
-One other thing to pay attention to is how we were able to nest the `head` and `body` tags inside the `html` tags, and we even nested the `title` tag inside the head!  Each webpage is a tree-like hierarchy like this that can sometimes get really, really nested.  Also note that it's considered best practice to indent your tags to the same lines (each nesting indented 2-4 spaces) to make it easier to read.
+One other thing to pay attention to is how we were able to nest the `head` and `body` tags inside the `html` tags, and we even nested the `title` tag inside the head!  Each webpage is a tree-like hierarchy like this that can sometimes get really, really nested.  Also note that it's considered best practice to indent your tags to the same lines (each nesting indented 2 or 4 spaces) to make it easier to read.
 
 ### Adding in Scripts
 
 Now, we'll add in the scripts that will allow us to use deeper programming concepts like **variables**, **loops**, and more!  There's a special tag called a `script` tag that loads files such as **JavaScript** files.  **JavaScript** is the current internet standard for adding code functionality to your web page.  
 
-> Before we go any further, I just want to make a note.  This is directed at anyone with lots of programming experience that reads this.  Throughout the next few examples, we will cover some code that may not exactly be "best practice" or "industry standard".  That's not what I'm trying to do here.  I'm just trying to get some code that is easy to understand and works.  For instance, AirBnB's JavaScript style guide recommends defining functions like this: `var foo = function bar() {};`.  They provide good reasons for why you should do it this way.  It makes a lot of sense.  BUT.  You have to have a good amount of background before that's the case.  For someone just starting out, it makes a lot more sense to do it the way we'll do it below.  So all you smarty farties that want to correct: leave it alone for now.  There will be time for that later.
+> Before we go any further, I just want to make a note.  This is directed at anyone with lots of programming experience that reads this.  Throughout the next few examples, we will cover some code that may not exactly be "best practice" or "industry standard".  That's not what I'm trying to do here.  I'm just trying to get some code that is easy to understand and works.  For instance, AirBnB's JavaScript style guide recommends defining functions like this: `var foo = function bar() {};`.  They provide good reasons for why you should do it this way.  It makes a lot of sense.  BUT.  You have to have a good amount of background before it looks like anything other than gobbledygook.  For someone just starting out, it makes a lot more sense to do it the way we'll do it below.  So all you smarty farties that want to correct: leave it alone for now.  There will be time for that later.
 
 JavaScript works like this.  Imagine you have the `basic.html` file from above in your current directory.  Who knows, maybe you really do!  Next, create a file in the same directory called `annoying.js`.
 
 ```javascript
 // This is how we comment in JavaScript
-// Why are they all different?  Who knows.
+// Any line that starts with two forward slashes
+// doesn't affect the code.  It's for humans!
+// Why are comments different in every language?  Who knows.
 
 var message = "Hello friend!";
 alert(message);
@@ -75,7 +83,7 @@ Be sure not to forget your semicolons at the end of each line.  JavaScript is sl
 <html>
   <head>
     <title>Title in Page Tab</title>
-    <!-- This is how we comment.  Nobody sees this -->
+    <!-- This is how we comment in HTML.  Nobody sees this but us -->
   </head>
   <body>
     Hi there!
@@ -105,6 +113,7 @@ Just to finish explaining, the `src=` portion of the `script` tag tells the brow
 
     <script src="annoying.js"></script>
     <script>
+      // JavaScript *inside* HTML!
       var bt = document.createElement('p');
       bt.innerHTML = "bottom text";
       document.body.appendChild(bt);
@@ -113,7 +122,7 @@ Just to finish explaining, the `src=` portion of the `script` tag tells the brow
 </html>
 ```
 
-In a short explanation, I create a new "paragraph" element, like we saw above.  I set the text inside that `<p>` element to be `"bottom text"`, and then I attach it to the bottom of the `body` tag.  If you right-click the page and click `inspect`, you should see some HTML, but there's a new `<p>` element sitting there at the bottom that we didn't have in our `basic.html` file!
+In a short explanation, I create a new "paragraph" element, like we saw above.  I set the text inside that `<p>` element to be `"bottom text"`, and then I attach it to the bottom of the `body` tag, modifying the original code after the browser has read it.  If you right-click the page and click `inspect`, you should see some HTML, but there's a new `<p>` element sitting there at the bottom that we didn't have in our `basic.html` file!
 
 ![MAGIC PARAGRAPH ELEMENT](images/modified-html.png)
 
@@ -121,7 +130,7 @@ Cool right?  OK, I think we know as much as we need to move forward.
 
 ## Step 3: Introducing P5
 
-With JavaScript (and pretty much any other programming language), you can load in and build on top of other people's work.  This is great!  This is great because otherwise, everyone who wanted to make something would have to write all of the supporting/utility/framework-ey code as well.  There would be a billion people all writing libraries that helped capitalize words and take the square root of things.  The way you load in an external library is by including the relevant `script` tag before the `script` tags for your own code.  Since HTML files are read and processed from top to bottom, the `script` tags that come first get loaded first and become available for your code to reference.
+With JavaScript (and pretty much any other programming language), you can load in and build on top of other people's work.  This is great!  This is great because otherwise, everyone who wanted to make something would have to write all of the supporting/utility/framework-ey code as well.  There would be a billion people all writing libraries that helped capitalize words and take the square root of things.  One way you load in an external library is by including the relevant `script` tag before the `script` tags for your own code.  Since HTML files are read and processed from top to bottom, the `script` tags that come first get loaded first and become available for your code to reference.
 
 One other thing to note.  Before, we showed that you can include your code in between the `script` tags, like this: `<script>alert("Woohoo!");</script>`.  We also showed that you can load a local file like this: `<script src="path/to/the/file.js"></script>`.  What I didn't include is that the `src` can also be a path to a website, so you can load the file from the web!  This is one easy way to load external libraries without having to download a bunch of files or keep track of them.
 
@@ -168,7 +177,7 @@ In programming, the computer reads the code line by line from top to bottom.  (T
 
 ### Microwave Presets
 
-When you push Quick Minute on your microwave, it turns the light on, starts the turntable, activates the microwave, puts 1:00 on the timer, and begins counting down.  Once it gets to 0:00, it turns the microwave off, turns the light off, stops the turn table, and beeps.  If it's one of those horrible microwaves, it beeps every 15 seconds after that until someone opens the door.  Can you imagine having to push one or more buttons for each of those steps?  Isn't it so much nicer to push Quick Minute?  If the manufacturer wanted to add a step that starts a disco ball inside the microwave, they could just add that line to the Quick Minute function instead of making you remember to add that in everytime you pushed the button sequence.  It might look something like this in JavaScript.
+When you push Quick Minute on your microwave, it turns the light on, starts the turntable, activates the microwave, puts 1:00 on the timer, and begins counting down.  Once it gets to 0:00, it turns the microwave off, turns the light off, stops the turn table, and beeps.  If it's one of those horrible microwaves, it beeps every 15 seconds after that until someone opens the door.  Can you imagine having to push one or more buttons for each of those steps?  Isn't it so much nicer to simply push Quick Minute?  If the manufacturer wanted to add a step that starts a disco ball inside the microwave, they could just add that line to the Quick Minute function instead of making you remember to add that in everytime you pushed the button sequence.  It might look something like this in JavaScript.
 
 ```javascript
 function quickMinute() {
@@ -180,11 +189,11 @@ function quickMinute() {
   turnTableOff();
   lightOff();
   beep();
-  // beepUntilOpened();
+  // beepUntilOpened();  Only if you're unlucky...
 }
 ```
 
-Functions in JavaScript are defined by the word `function`, a name (in this case: `quickMinute`), any function inputs in parenthesis (in this case: there are none), and then the code in the function within the {} brackets.  You can then call this function whenever you want by simply typing the name of the function and a pair of parenthesis () like this:  `quickMinute()`.  
+Functions in JavaScript are defined by the word `function`, a name (in this case: `quickMinute`), any function inputs in parenthesis (in this case: there are none), and then the code in the function within the {} brackets.  You can then call this function whenever you want by simply typing the name of the function and a pair of parenthesis () like this:  `quickMinute()`.  In JavaScript, adding those parenthesis acts as a trigger, meaning "Call this function now please!"
 
 ### Math Functions
 
@@ -293,7 +302,7 @@ Alrighty.  There's a lot here.  If you're a super genius, you can kind of get a 
 var x, y, rand;
 ```
 
-We're declaring our variables up front.  A variable is like an address or mailbox slot that could hold a value.  You use the word `var` to tell JavaScript you want to create new ones.  If you're anything like me, you'll forget to write `var` all the time.  If you just write `var x` and not `var x = 3` or something, then then the value of `x` (at least until you assign something to it i.e. put a value in that particular PO box called `x`) will be the JavaScript concept `undefined`.  More on that later.  Hopefully right now you can see that we're saying right at the beginning, "Hey!  I'm going to have three values that I care about and want to get access to later: x, y, and rand."  Don't forget the semicolon at the end of the line!
+We're declaring our variables up front.  A lot of times, this isn't the best practice, and we should avoid it if we can.  For our initial sketches, though, it'll probably be ok.  A variable is like an address or mailbox slot that could hold a value.  You use the word `var` to tell JavaScript you want to create new ones.  If you're anything like me, you'll forget to write `var` all the time.  If you just write `var x` and not `var x = 3` or something, then then the value of `x` (at least until you assign something to it i.e. put a value in that particular PO box called `x`) will be the JavaScript concept `undefined`.  More on that later.  Hopefully right now you can see that we're saying right at the beginning, "Hey!  I'm going to have three values that I care about and want to get access to later: x, y, and rand."  Don't forget the semicolon at the end of the line!
 
 ### The Setup Function
 
@@ -329,7 +338,7 @@ function draw() {
 }
 ```
 
-There's a *lot* of new stuff in this function.  You can see we finally assign a value to `rand`, but what is it?  P5 provides two useful functions for us: [`floor`](https://p5js.org/reference/#/p5/floor), and [`random`](https://p5js.org/reference/#/p5/random).  The way that we're using `random`, it takes in an optional maximum value, and it returns a random value between zero and that maximum, noninclusive (i.e. [0, max), i.e. between 0 and 3.99999).  `floor` takes any number in and returns that number rounded down to the nearest number (e.g. 3.4 becomes 3 and 2.9 becomes 2).  All together, you are assigning a random choice of (0, 1, 2, 3) to `rand`.
+There's a *lot* of new stuff in this function.  You can see we finally assign a value to `rand`, but what is it?  P5 provides two useful functions for us: [`floor`](https://p5js.org/reference/#/p5/floor), and [`random`](https://p5js.org/reference/#/p5/random).  The way that we're using `random`, it takes in an optional maximum value, and it returns a random value between zero and that maximum, noninclusive (i.e. [0, max), i.e. between 0 and 3.99999).  `floor` takes any number in and returns that number rounded down to the nearest integer (e.g. 3.4 becomes 3 and 2.9 becomes 2).  All together, you are assigning a random choice of (0, 1, 2, 3) to `rand`.
 
 #### Comparing Things
 
@@ -337,7 +346,7 @@ There's a *lot* of new stuff in this function.  You can see we finally assign a 
 (rand === 0)
 ```
 
-There's a large section in this function that has 4 of these equations in parenthesis.  What the triple equals does in JavaScript is compares the two.  If the thing on the left is the same as the thing on the right, it evaluates to the JavaScript value `true`.  Otherwise it evaluates to false.
+There's a large section in this function that has 4 of these equations in parenthesis.  In JavaScript, the triple equals compares two things.  If the thing on the left is the same as the thing on the right, it evaluates to the JavaScript value `true`.  Otherwise it evaluates to false.
 
 #### Branching with IF, ELSE IF, ELSE Statements
 
@@ -355,6 +364,8 @@ There's a large section in this function that has 4 of these equations in parent
 
 This is what is known as an **if statement**.  The way it works is by starting at the top.  **If** the first test in parenthesis evaluates to `true`, then the code within the brackets {} is run and nothing else is.  Otherwise, the code moves on to the next **if**.  If none of the **if** statements ends up being true, and there is an **else** statement present, that runs instead.  You can mix and match your **ifs** with **else ifs** and **elses** as you see fit:
 
+You can omit the **else if** statements:
+
 ```javascript
 if (name === "Jim") {
   alert("Hi Jim!");
@@ -363,7 +374,7 @@ if (name === "Jim") {
 }
 ```
 
-No **if elses** is acceptable.
+You can even omit the **else** statement:
 
 ```javascript
 if (age > 65) {
@@ -373,7 +384,7 @@ if (age > 65) {
 }
 ```
 
-No **else** is also acceptable.  If there's no else and, for example, `age` was 29, nothing would happen in the block of code above.
+If there's no else and, for example, `age` was 29, nothing would happen in the block of code above.
 
 So, to bring us back to the code in our `draw` function, what we're doing is checking each possible value of `rand`.  If `rand` is 0, do this.  If `rand` is 1, do this.  If `rand` is 2, do this.  Otherwise (we know `rand` is 3), do this other thing.  In theory, only one branch will be run, depending on `rand`'s value.
 
@@ -395,7 +406,7 @@ You can even use the variable in both sides of the equation!
 x = 12;
 x = x + 3;
 // The right side evaluates to 15, so then
-// x gets set to 15: x === 15
+// x gets set to 15
 ```
 
 There's a shorthand to the method above:
@@ -403,8 +414,9 @@ There's a shorthand to the method above:
 ```javascript
 x = 12;
 x += 3;
-// x === 15, += is short for add the following
+// += is short for add the following
 // to the current value of x
+// Thus, x === 15 now.
 ```
 
 There's even a shorter shorthand if you want to just add 1 to the variable (i.e. increment it).  That's what you see above:
@@ -425,7 +437,7 @@ In the browser, all points are referenced from Top and Left.  In fact, x and y a
 
 ![Canvas coordinates](images/coordinate-system.jpg)
 
-Thus, in our code above, if `rand` is 0, we add 1 to `x`, causing the `point` to move right one.  If `rand` is 1, we subtract 1 from `x`, causing the `point` to move left one.  If `rand` is 2, we add 1 to `y`, thus causing the `point` to move down one.  And if `rand` is 3, we subtract 1 from `y`, causing the `point` to move up one.
+Thus, in our code above, if `rand` is 0, we add 1 to `x`, causing the `point` to move right one.  If `rand` is 1, we subtract 1 from `x`, causing the `point` to move left one.  If `rand` is 2, we add 1 to `y`, thus causing the `point` to move down one.  And if `rand` is 3, we subtract 1 from `y`, causing the `point` to move up one.  Overall, this code causes the point to randomly choose a direction and take one step that way.
 
 ### Wrapping Up
 
@@ -470,3 +482,5 @@ Feel accomplished yet??  You should.  You did awesome!  (Awesomely?)  Here's som
 5. Make it so that if our walker reaches the edge of the canvas, he/she gets teleported to the other side of the canvas.  (Hint: use a very small canvas to save time in testing).
 6. Currently the walker's steps are preserved.  This is because we aren't redrawing the background every time.  Make it so that you can't see the walker's previous steps.  Now make it so you can't se the steps and the walker is moving around in a rave (i.e. random background color!).
 7. Using the P5 documentation: instead of drawing a `point`, draw a circle.  Do something creative with the circle's fill color.
+
+Let me know if you get stuck or have any questions!  Let me know if I explained anything confusingly or could do better.
